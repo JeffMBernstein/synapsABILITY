@@ -12,14 +12,26 @@
   <%= f.text_field :last_name, class: 'txtfield' %>
 </div>
 <div>
-	<%= f.label :email %>
-	<%= f.email_field :email, class: 'txtfield' %>
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'txtfield' %>
 </div>
 <div>
-	<%= f.label :password %>
-	<%= f.password_field :password, class: 'txtfield' %>
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'txtfield' %>
 </div>
 <div>
-	<center><%= f.submit "Create", users_path, class: "btn btn-success" %></center>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, class: 'txtfield' %>
+</div>
+<div>
+  <%= f.label :bio %>
+  <%= f.text_area :bio, class: 'txtfield' %>
+</div>
+<div>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar, class: 'txtfield' %>
+</div>
+<div>
+  <center><%= f.submit "Create", class: "btn btn-success" %></center>
 </div>
 <% end %>
