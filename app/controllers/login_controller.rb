@@ -1,10 +1,10 @@
 class LoginController < ApplicationController
 	
-	def new
+	def new_session
 		@user = User.new
 	end
 
-	def create
+	def create_session
 		@user = User.find_by(email: params[:user][:email])
 
 		if @user && login_valid?(@user)
