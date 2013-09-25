@@ -4,6 +4,9 @@ SynapsABILITY::Application.routes.draw do
   resources :users
 
   root 'welcome#index'
+  get '/login', to: 'login#new'
+  post '/login', to: 'login#create'
+  get '/logout', to: 'login#logout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

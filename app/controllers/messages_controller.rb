@@ -16,12 +16,10 @@ class MessagesController < ApplicationController
   end
 
 
-private
-
+  private
   def message_params
-  	params.require(:message).permit(:subject, :body)
+  	params.require(:message).permit(:subject, :body, :sender_id)
   end
-end
-
 
 end
+
