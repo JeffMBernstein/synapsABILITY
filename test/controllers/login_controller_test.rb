@@ -22,5 +22,6 @@ class LoginControllerTest < ActionController::TestCase
     user = users(:one)
     post :create, user: { email: user.email, password_digest: user.password_digest }
     assert_equal session[:user_id], user.id
+    assert_redirected_to users_path
   end
 end
