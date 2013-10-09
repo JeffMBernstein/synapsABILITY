@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-	has_many :messages
 	mount_uploader :avatar, AvatarUploader
 
 	validates :username, :first_name, :last_name, :email, presence: true
