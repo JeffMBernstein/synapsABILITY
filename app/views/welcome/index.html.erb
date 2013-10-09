@@ -4,7 +4,28 @@
 <head>
   <title>synapsABILITY—Supporting Families Touched By Disability</title>
   <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <style>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEiYaG2esKqas16wCBykQ46ycd4bcnEhI&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          zoom: 14,
+          center: new google.maps.LatLng(43.639282, -79.425004),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <style>
     /* normalize.css 2011-06-23T00:50 UTC //github.com/jonathantneal/normalize.css */
     article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}html{cursor:default;font-size:100%;overflow-y:scroll;-webkit-tap-highlight-color:transparent;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body,form,input,button,select,textarea{font-size:100%;margin:0}a,a:active,a:hover{outline:none}a:focus{outline:thin dotted}abbr{_border-bottom:expression(this.title ? '1px dotted':'none')}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#FF0;color:#000}pre,code,kbd,samp{font-family:monospace,monospace;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small,sub,sup{font-size:75%}sub,sup{line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}nav ul{list-style:none}audio[controls],canvas,video{display:inline-block;*display:inline}audio{display:none;_display:expression(this.controls ? 'inline':'none');*zoom:1}audio[controls]{display:inline-block}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){ overflow:hidden}legend{*margin-left:-7px}button,input,select,textarea{vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal;_overflow:expression(this.type == 'button|reset|submit' ? 'visible':'')}button,input[type="button"],input[type="reset"],input[type="submit"]{overflow:visible;-webkit-appearance:button}input[type="checkbox"],input[type="radio"]{box-sizing:border-box}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-decoration{ -webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
     body {      
@@ -109,12 +130,12 @@
     }
   </style>
 </head>
-
 <body>
-  <div id="feature" class="landing home" src="app/assets/images/sA_background.jpg">
-    <div class="content">
-      <div class="headline">
-        <div class="social">
+  <div id="map-canvas" style="width: 100%; height: 100%"></div>
+  <div id="feature" class="landing home" src="images/sA_background.jpg"></div>
+    <div class="content"></div>
+      <div class="headline"></div>
+        <div class="social"></div>
     <ul>
       <li style="width:134px;"><a href="https://twitter.com/synapsABILITY" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true"></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
       <li><div class="fb-like" data-href="http://www.facebook.com/synapsABILITY" data-send="false" data-layout="button_count" data-width="134" data-show-faces="false"></div></li>
@@ -134,15 +155,11 @@
   <section id="favourites" class="favourites box">
     <h2>My Favourite Things</h2>
     <h3>Here are a few things I really love</h3>
-    <img class="favourite" src="images/kitten.jpg">
-    <img class="favourite" src="images/kitten.jpg">
-    <img class="favourite" src="images/kitten.jpg">
-    <img class="favourite" src="images/kitten.jpg">
   </section>
   <section id="contact" class="contact box">
     <h2>Contact Me</h2>
-    <a href="https://facebook.com/synapsability"><img src="app/assets/images/facebook.png"></a>
-    <a href="https://twitter/com/synapsability"><img src="app/assets/images/twitter.png"></a>
+    <a href="https://facebook.com/synapsability"><img src="images/facebook.png"></a>
+    <a href="https://twitter.com/synapsability"><img src="images/twitter.png"></a>
   </section>
 </body>
 </html>
