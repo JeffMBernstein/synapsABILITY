@@ -1,0 +1,11 @@
+<%= form_for @message do |f| %>
+<div> <%= f.hidden_field :sender_id, value: @current_user.id %></div>
+<div> <%= f.select :recipient_id, options_from_collection_for_select(User.all, "id", "full_name") %></div>
+<div> <%= f.text_field :subject %> </div>
+<div><%= f.text_area :body, rows: 6 %></div>
+
+<%= f.submit "Send Message", class: "btn btn-primary" %>
+
+<% end %>
+
+findAllByReceipientId
