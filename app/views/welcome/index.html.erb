@@ -1,165 +1,566 @@
-<!DOCTYPE html>
-<html lang ="en">
-
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en" itemscope itemtype="http://schema.org/Product"> <!--<![endif]-->
 <head>
-  <title>synapsABILITY—Supporting Families Touched By Disability</title>
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 100% }
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEiYaG2esKqas16wCBykQ46ycd4bcnEhI&sensor=false">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          zoom: 14,
-          center: new google.maps.LatLng(43.639282, -79.425004),
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-    <style>
-    /* normalize.css 2011-06-23T00:50 UTC //github.com/jonathantneal/normalize.css */
-    article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}html{cursor:default;font-size:100%;overflow-y:scroll;-webkit-tap-highlight-color:transparent;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body,form,input,button,select,textarea{font-size:100%;margin:0}a,a:active,a:hover{outline:none}a:focus{outline:thin dotted}abbr{_border-bottom:expression(this.title ? '1px dotted':'none')}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#FF0;color:#000}pre,code,kbd,samp{font-family:monospace,monospace;_font-family:'courier new',monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small,sub,sup{font-size:75%}sub,sup{line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}nav ul{list-style:none}audio[controls],canvas,video{display:inline-block;*display:inline}audio{display:none;_display:expression(this.controls ? 'inline':'none');*zoom:1}audio[controls]{display:inline-block}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){ overflow:hidden}legend{*margin-left:-7px}button,input,select,textarea{vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal;_overflow:expression(this.type == 'button|reset|submit' ? 'visible':'')}button,input[type="button"],input[type="reset"],input[type="submit"]{overflow:visible;-webkit-appearance:button}input[type="checkbox"],input[type="radio"]{box-sizing:border-box}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-decoration{ -webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
-    body {      
-      color: #333333;
-      font-family: Helvetica, Arial, sans-serif;
-    }
-    h1 {
-      font-size: 48px;
-    }
-    h2 {
-      font-size: 32px;
-    }
-    h1, h2, h3 {
-      font-family: 'Oswald', sans-serif;
-    }
-    p {
-      line-height: 1.4;
-      font-size: 15px;
-    }
-    img.logo {
-      margin: 0 auto;
-      display: block;
-      width: 200px;
-      height: 200px;
-    }
-    img.profile {
-      border: 1px solid grey;
-      width: 200px;
-      height: 200px;
-      padding: 5px;
-      margin-right: 10px;
-      float: left;
-      margin-right: 20px;
-    }
-    img.favourite {
-      border: 1px solid #A8258D;
-      border-radius: 50%;
-      width: 200px;
-      padding: 5px;
-      margin: 10px;
-    }
-    section.banner {
-      padding-top: 110px;
-      padding-bottom: 100px;
-      background: url('images/sA_background.jpg');
-      background-attachment: fixed;
-      color: #ffffff;
-      text-align: center;
-    }
-    section.banner p {
-      font-size: 22px;
-    }
-    section.banner h1 {
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    section.about {
-      background: url('images/tile1.png');
-      overflow: hidden;
-    }
-    section.about h2 {
-      text-align: center;
-    }
-    section.favourites {
-      text-align: center;
-    }
-    section.contact {
-      text-align: center;
-      background: url('images/tile2.png');
-    }
-    section.contact img {
-      margin: 20px;
-    }
-    section.box {
-      padding: 50px 100px;
-    }
-    section.box h2, section.box h3 {
-      color: #1A4876;
-    }
-    .menu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: center;
-      border-bottom: 1px solid #434A5C;
-      background: #ffffff;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-    }
-    .menu li {
-      display: inline-block;
-      padding: 20px 35px;
-    }
-    .menu a {
-      text-decoration: none;
-      color: #333333;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-family: 'Oswald', sans-serif;
-    }
-  </style>
+
+  <!-- Meta tags & title /-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Gready - An Easy to Use Responsive Landing Page</title>
+  <meta name="description" content="." />
+  <meta name="keywords" content="" />
+  <meta name="author" content="humans.txt">
+
+  <!-- Favicon /-->
+  <link rel="shortcut icon" href="favicon.png" type="images/x-icon" /> <!-- Favicon /-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <!-- Stylesheets /-->
+  <link rel="stylesheet" href="assets/gumby.css.scss.erb">   <!-- Gumby Framework /-->
+  <link rel="stylesheet" href="assets/style.css.scss.erb">   <!-- Main stylesheet /-->
+  <link rel="stylesheet" href="assets/component.css.scss.erb"> <!-- Flexslider - Thumbs Icon /-->
+  
+  
+  <script src="assets/modernizr-2.6.2.min.js"></script>  <!-- Modernizr /-->
+  
 </head>
+
+
 <body>
-  <div id="map-canvas" style="width: 100%; height: 100%"></div>
-  <div id="feature" class="landing home" src="images/sA_background.jpg"></div>
-    <div class="content"></div>
-      <div class="headline"></div>
-        <div class="social"></div>
-    <ul>
-      <li style="width:134px;"><a href="https://twitter.com/synapsABILITY" class="twitter-follow-button" data-show-count="false" data-show-screen-name="true"></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
-      <li><div class="fb-like" data-href="http://www.facebook.com/synapsABILITY" data-send="false" data-layout="button_count" data-width="134" data-show-faces="false"></div></li>
-    </ul>
-  <ul class="menu">
-    <li><a href="#about">About</a></li>
-    <li><a href="#favourites">Favourites</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <section class="banner">
-    <img class="logo" src="images/Logo_Final.png">
-    <%= link_to "New User", new_user_path, class: "btn btn-success btn-large :hover" %> 
-  </section>
-  <section id="about" class="about box">
-    <h2>About Me</h2>
-  </section>
-  <section id="favourites" class="favourites box">
-    <h2>My Favourite Things</h2>
-    <h3>Here are a few things I really love</h3>
-  </section>
-  <section id="contact" class="contact box">
-    <h2>Contact Me</h2>
-    <a href="https://facebook.com/synapsability"><img src="images/facebook.png"></a>
-    <a href="https://twitter.com/synapsability"><img src="images/twitter.png"></a>
-  </section>
-</body>
+
+<!-- NAVIGATION ############################################### -->
+
+
+		<!-- Mobile Menu --> 
+
+		<div class="mobile-menu">
+			<section id="collapse">
+				<div class="row">
+					<div class="mobile-menu-inner">
+						<ul class="nav-mobile">
+						
+						 <li><a href="#">About</a></li>
+						 
+						 <li><a href="#">Support</a></li>
+						 
+						 <li><a href="#">Contact</a></li>
+						 
+						</ul>
+					</div>
+				</div>
+			</section>
+			<a href="#" id="collapse-menu"><img src="images/menu.png" alt="MENU ICON"></a>
+		</div>
+
+
+		<!--  Menu --> 
+
+
+		<div class="cbp-af-header">
+		
+			<nav class="row">
+				 <div id="logo"><a href="#"><img alt="YOURLOGO" src="images/logotop.png"></a></div>
+				
+				 <ul id="nav">
+				 
+					 <li><a href="#">Contact</a></li>
+					 
+					 <li><a href="#">Support</a></li>
+					 
+					 <li><a href="#cbp-so-scroller">About</a></li>
+				 </ul>
+			 
+			</nav>
+		
+		</div> 
+
+
+<!-- END NAVIGATION ############################################### -->
+
+
+<!-- HEADER ############################################### -->
+
+
+<section id="header">
+
+	<div class="row text-right social-stuff">
+
+		<!--  Facebook Share Button--> 
+	
+	
+		<!-- PUT HERE YOUR GENERATE CODE OF FACEBOOK BUTTON : developers.facebook.com/docs/reference/plugins/like/ -->
+	
+	
+		<!-- Twitter Share Button --> 
+		
+<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	</div>
+	
+	
+    <div class="row">
+    
+      <div class="twelve columns centered">
+      
+      	<!-- Logo --> 
+      
+      	<div class="fade1 logo"><img src="images/logo.png" alt="Logo"></div>
+      	
+      	<!-- Title --> 
+              
+        <h2 class="fade2">Get ready to see something awesome
+	        			<br>That'll change your life.</h2>  
+        
+        <!-- Button--> 
+        
+        <a class="button fade3" href="#container">Discover More</a>
+        
+        <a class="button2 fade3" style="margin-left:10px;" href="#container">Subscribe</a>
+        
+      </div>     
+                
+    </div>
+
+
+</section>
+
+
+<!-- END HEADER ############################################### -->
+
+<!-- BEGIN CONTAINER ############################################### -->
+
+
+<div id="container" class="container">
+
+<div id="cbp-so-scroller" class="cbp-so-scroller"> <!-- HERE IS THE DIV FOR SCROLLING EFFECT -->
+
+
+<!-- SECTION THUMBS ############################################### -->
+
+
+<section class="cbp-so-section thumbs">
+
+	<div class="row">
+
+		<div class="twelve columns centered">
+		
+			<h3>Simple as 1-2-3</h3>
+			
+			<p class="lead">Bacon ipsum dolor sit amet <b>meatball</b> shank pork chop capicola fatback pork loin sirloin flank. <b>Andouille</b> tongue corned beef rump pork loin shank meatball.</p>
+		
+
+			<div class="hi-icon-wrap hi-icon-effect-9 hi-icon-effect-9b">
+			         
+                <ul class="three_up tiles centered hi-icon-effect-9 hi-icon-effect-9b">
+                    
+                    <li>
+                    <a href="#set-9" class="hi-icon hi-icon-images">Images</a>
+                    <div class="clear"></div>
+                    <h4>TAKE PICTURE</h4>
+                    <p>Drumstick pork pork chop, pork belly meatball swine brisket shoulder.</p>
+                    </li>
+                    
+                    <li>
+                    <a href="#set-9" class="hi-icon hi-icon-pencil">Edit</a>
+                    <div class="clear"></div>
+                    <h4>CUSTOMIZE IT</h4>
+                    <p>Flank ham hock tri-tip t-bone prosciutto ribeye tongue pork short ribs.</p>
+                    </li>
+                    
+                    <li>
+                    <a href="#set-9" class="hi-icon hi-icon-mail">Mail</a>
+                    <div class="clear"></div>
+                    <h4>SHARE IT</h4>
+                    <p> Tail frankfurter meatball, chuck tenderloin ham jowl filet mignon fatback capicola. </p>
+                    </li>
+                
+                </ul>
+            
+  			</div>          
+
+		</div>
+
+	</div>		
+		
+</section>
+
+<!-- END SECTION THUMBS ############################################### -->
+
+
+<!-- FIRST SECTION ############################################### -->
+
+
+<section class="cbp-so-section work1">
+
+	<div class="row">
+		
+		<div class="six columns cbp-so-side cbp-so-side-left">
+		
+			<!-- Title --> 
+		
+			<h3>The most simple website with your favorite design !</h3>
+						
+			<!-- Content --> 
+			
+			<p>Bacon ipsum dolor sit amet meatball shank pork chop capicola fatback pork loin sirloin flank. <b>Andouille</b> tongue corned beef rump pork loin shank meatball capicola turducken venison shankle kevin pancetta tri-tip boudin.</p>
+			
+			
+			<div class="download-button" style="padding-top:30px;">
+			
+				<img src="images/appstore.png" alt="EXEMPLE">
+			
+				<img src="images/gplay.png" alt="EXEMPLE">
+			
+			</div>
+		
+		</div>
+	
+		<!-- Image from right --> 
+	
+		<div class="six columns cbp-so-side-img cbp-so-side-right" style="margin-bottom:-60px;" >
+		
+			<img src="http://www.placehold.it/350x510" alt="EXEMPLE">
+		
+		</div>
+
+	</div>
+
+</section>
+
+<!-- END FIRST SECTION ############################################### -->
+
+
+<!-- SECOND SECTION ############################################### -->
+
+<section class="cbp-so-section work2" >
+
+	<div class="row">
+	
+		<div class="five columns cbp-so-side cbp-so-side-right" style="float:right;">
+		
+			<!-- Title --> 
+		
+			<h3>It Always looks better with Apple Products.</h3>
+			
+			<span>With an exemple of span</span>
+			
+			<!-- Content --> 
+			
+			<p>This is the HTML version of the Flat Studio Theme. Also very easy to customize and well detailed into the HTML and CSS Files. There's some great features like the smooth scrolling, <a href="#">Parallax Background</a>, Filterable Portfolio with Isotope Grid, Works Expander and more...</p>
+						
+		</div>		
+		
+		<!-- Image from left --> 
+		
+		<div class="seven columns cbp-so-side-video cbp-so-side-left" style="margin-top:10px;" >
+		
+		<!-- Could be an iframe with theses settings : width="100%;" height="335"> -->	
+			<img src="http://www.placehold.it/600x350" alt="EXEMPLE">
+						
+		</div>	
+			
+	</div>
+
+</section>
+
+<!-- END SECOND SECTION ############################################### -->
+
+
+<!-- TIRTH SECTION ############################################### -->
+
+
+<section class="cbp-so-section work1">
+
+	<div class="row">
+		
+		<div class="five columns cbp-so-side cbp-so-side-left">
+		
+			<!-- Title --> 
+		
+			<h3>AS YOU SAW THERE'S SOME GREAT FEATURE.</h3>
+						
+			<!-- Content --> 
+			
+			<p>Bacon ipsum dolor sit amet meatball shank pork chop capicola fatback pork loin sirloin flank. Andouille tongue corned beef rump pork loin shank meatball capicola turducken venison shankle kevin pancetta tri-tip boudin.</p>
+			
+			
+			<div class="clear"></div>
+			<div class="clear"></div>
+			
+			<a href="#" target="_blank" class="button2">Register right now</a>
+		
+		</div>
+	
+		<!-- Slider from right --> 
+	
+		<div class="seven columns cbp-so-side-img  cbp-so-side-right">
+		
+			<div id="slider-wrapper">
+			
+				<div class="inner-wrapper">
+
+					<!-- Bullets --> 
+					
+					<input checked type="radio" name="slide" class="control" id="Slide1"/>
+					<label for="Slide1" id="s1"></label>
+					
+					<input type="radio" name="slide" class="control" id="Slide2"/>
+					<label for="Slide2" id="s2"></label>
+					
+					<input type="radio" name="slide" class="control" id="Slide3"/>
+					<label for="Slide3" id="s3"></label>
+					
+					<!-- Images --> 
+					
+					<ul class="overflow-wrapper">
+					
+						<li class="slide"><img src="http://www.placehold.it/600x350" alt="EXEMPLE"></li>
+						
+						<li class="slide"><img src="http://www.placehold.it/600x350" alt="EXEMPLE"></li>
+						
+						<li class="slide"><img src="http://www.placehold.it/600x350" alt="EXEMPLE"></li>
+						
+					</ul>
+					
+				</div>
+				
+			</div>
+		
+		</div>
+
+	</div> <!-- End Row --> 
+
+</section>
+
+
+<!-- END TIRTH SECTION ############################################### -->
+
+
+</div> <!-- end of div scrolling effect -->
+
+
+
+<!-- TESTIMONIALES SECTION ############################################### -->
+
+
+<section id="testimonial">
+
+	<div class="row">
+	
+		<div class="twelve columns centered">
+
+					<h3>WHAT THE PEOPLE THINK ?</h3>
+					
+					<p class="lead">We love feedback ! It allows us to question ourselves, do not hesitate to <a href="#">give us</a> your.</p>
+					
+					<div class="testblock">
+					
+						<div class="testimg">
+						
+							<div class="flexslider" id="slider1">
+							
+								<ul class="slides">
+									
+									<li><img src="http://www.placehold.it/270x270" alt="EXEMPLE">   <!-- set client 1 photo here !--></li>
+									
+									<li><img src="http://www.placehold.it/270x270" alt="EXEMPLE">  <!-- set client 2 photo here !--></li>
+									
+									<li><img src="http://www.placehold.it/270x270" alt="EXEMPLE"> <!-- set client 3 photo here !--></li>	
+									
+										<!--to add more client, copy the above li element and change the image-->
+								</ul>
+								
+							</div>
+						
+						</div>
+						
+						<div class="testtext">
+
+							<div class="flexslider" id="slider2">
+							
+								<ul class="slides">
+								
+									<li>
+										<h4 class="testtitle">Francis Martinez</h4>  	 <!-- set client 1 name here !-->
+										<div class="testsub">via Twitter 5 days ago</div> <!--set the source here-->
+										<div class="testtextblock">							  	 <!-- set client 1 testimonial here !-->
+											<p>Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+										</div>
+									</li>
+									
+									<li>
+										<h4 class="testtitle">Manon Deluxe</h4>  	 <!-- set client 2 name here !-->
+										<div class="testsub">via FeedMe 7 days ago</div> <!--set the source here-->
+										<div class="testtextblock">						  	 <!-- set client 1 testimonial here !-->
+											<p>Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+										</div>
+									</li>
+									
+									<li>
+										<h4 class="testtitle">Bary Gilson</h4>  	 <!-- set client 3 name here !-->
+										<div class="testsub">via Mail 10 days ago</div> <!--set the source here-->
+										<div class="testtextblock">						  	 <!-- set client 1 testimonial here !-->
+											<p>Interdum et malesuada fames ac ante ipsum primis in faucibus.  </p>
+										</div>
+									</li>	
+									
+										<!--to add more testimonial, copy line the li element -->
+								</ul>
+								
+							</div>				
+						
+						</div>
+						
+					</div>	
+					
+			</div> <!-- Columns end -->
+	
+	</div> <!-- Row end -->
+
+</section>
+
+<!-- END TESTIMONIALES SECTION ############################################### -->
+
+
+<!-- LITTLE TEXT JOIN US SECTION ############################################### -->
+
+<section id="joinus">
+
+	<div class="row">
+	
+		<div class="eight columns centered">
+		
+			<h2>Join thousands of awesome people, there's only one thing to do. Subscribe !</h2>
+			
+		</div>
+		
+	</div>
+
+</section>
+
+<!-- END LITTLE TEXT JOIN US SECTION ############################################### -->
+
+
+<!-- FORM SECTION ############################################### -->
+
+
+<section id="signup">
+
+	<div class="row centered"> 
+	
+		<div class="seven columns centered">
+		
+			<!-- Begin the Form --> 
+			
+			<form action="form_sender.php" method="post">  
+			
+			<!-- Input of E-Mail --> 
+
+			<div class="seven columns">
+		
+				<input name="email" class="email" type="text" placeholder="YOUR E-MAIL PLEASE ?">
+			
+			</div>
+			
+			<!-- Send Button -->
+			
+			<div class="five columns">
+			
+				 <button name="send" type="submit" class="button2">Sign up now</button>
+			
+		    </div>
+		    
+		    <!-- End of the Form --> 
+			 
+			</form> 
+		<!-- Text Promise we do not spam -->
+
+			<div class="twelve columns centered">
+		
+				<p class="spam">Promise, we do not spam :)</p>
+		
+			</div>			
+
+		</div>
+		
+	</div>
+
+</section>
+
+<!-- END FORM SECTION ############################################### -->
+
+
+<div id="footerSpacer"></div> <!-- USED FOR THE FIXED EFFECT : DON'T REMOVE -->
+
+
+<!-- FOOTER SECTION ############################################### -->
+
+
+<section id="footer">
+
+	<div class="row">
+
+		<!-- Text from left -->
+		
+		<div class="seven columns pull_left">
+		
+			<p>© 2013 Supview<br>Made with <img src="img/withlove.png" alt="With Love"> in Belgium</p>
+
+		</div>
+
+		<!-- Footer Navigation -->
+
+		<div class="five columns text-right social">
+			
+		
+				 <ul id="navfirst">
+				 
+					 <li><a href="#">Unsubscribe</a></li>
+					 
+					 <li><a href="#">Privacy</a></li>
+					 
+					 <li><a href="#">Support</a></li>
+					 
+				 </ul>
+          	
+		</div>
+
+	</div>
+
+</section>
+
+
+<!-- END FOOTER SECTION ############################################### -->
+
+
+</div> <!-- end of container -->
+
+
+  <!-- Grab Google CDN's jQuery, fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="assets/main.js" type="text/javascript"></script> <!-- Main Javascript File -->
+  <script src="assets/plugins.js" type="text/javascript"></script> <!--Plugins File -->
+  <script src="assets/cbpScroller.js" type="text/javascript"></script> <!-- Scroll from left & right -->
+  <script src="assets/classie.js" type="text/javascript"></script> <!-- Scroll from left & right -->
+  <script src="assets/jquery.scrollto.js" type="text/javascript"></script> <!-- ScrollTo for Button -->
+  <script src="assets/jquery.parallax-1.1.3.js" type="text/javascript"></script> <!-- Parallax -->
+  <script src="assets/jquery.flexslider.js" type="text/javascript"></script> <!-- FlexSlider -->
+
+  
+  <!-- Change UA-XXXXX-X to be your site's ID -->
+  <!--<script>
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>  -->
+
+  </body>
+  
 </html>
