@@ -32,6 +32,18 @@
   <%= f.file_field :avatar, class: 'txtfield' %>
 </div>
 <div>
+  <%= f.label :street %>
+  <%= f.text_field :street, class: 'txtfield' %>
+</div>
+<div>
+  <%= f.label :city %>
+  <%= f.text_field :city, class: 'txtfield' %>
+</div>
+<div>
+  <%= f.label :province %>
+  <%= f.text_field :province, class: 'txtfield' %>
+</div>
+<div>
   <center><%= f.submit "Create", class: "btn btn-success" %></center>
 </div>
 <% end %>
