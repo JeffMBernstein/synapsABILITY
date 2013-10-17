@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
 
   before_action :require_current_user
+  
 	def index
   	@messages = Message.all
   end

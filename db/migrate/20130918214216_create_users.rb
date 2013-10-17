@@ -8,7 +8,11 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_digest
       t.text :bio
       t.string :avatar
-
+      t.string :street
+      t.string :province
+      t.float :latitude
+      t.float :longitude
+      t.boolean :gmaps
       t.timestamps
     end
   end
