@@ -318,9 +318,9 @@ nav {
         height:600px;
         color:#FFF;
         background:url('assets/birch.jpg')  #363f48 fixed; 
-    z-index: 999998;
-    position: relative;
-    background-size: 100%;}
+        z-index: 999998;
+        position: relative;
+        background-size: 100%;}
 
 
 #header .twelve.columns { 
