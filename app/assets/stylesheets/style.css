@@ -213,7 +213,9 @@ p a:hover {
 
 nav #logo {
         float:left;
-        z-index: 99999;}
+        z-index: 99999;
+        padding-top: 0;
+    }
         
 nav {
         z-index: 999;
@@ -291,8 +293,7 @@ nav {
         line-height: 60px;}
 
 .cbp-af-header.cbp-af-header-shrink #logo { 
-        padding:25px 20px 0px 0px; 
-        width:110px;}
+        width:90px;}
 
 /* Transitions and class for reduced height */
 
