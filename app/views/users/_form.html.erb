@@ -1,29 +1,39 @@
-<%= form_for @user do |f| %>
-<div>
-  <%= f.label :username %>
-  <%= f.text_field :username, class: 'txtfield' %>
-</div>
-<div>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name, class: 'txtfield' %>
-</div>
-<div>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name, class: 'txtfield' %>
-</div>
-<div>
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'txtfield' %>
-</div>
-<div>
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'txtfield' %>
-</div>
-<div>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: 'txtfield' %>
-</div>
-<div>
-  <center><%= f.submit "Create", class: "btn btn-success" %></center>
-</div>
-<% end %>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+    </div>
+    <div class="modal-body">
+      <%= form_for @user do |f| %>
+        <div class="inputForm">
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+        </div>
+        <div class="inputForm">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+        </div>
+        <div class="inputForm">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+        </div>
+        <div class="inputForm">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+        <div class="inputForm">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
+        <div class="inputForm">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation %>
+        </div>
+        <div class="inputForm">
+          <%= f.submit "Create", class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

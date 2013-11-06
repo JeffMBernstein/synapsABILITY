@@ -21,6 +21,7 @@ module SynapsABILITY
     # config.i18n.default_locale = :de
     # add app/assets/fonts to the asset path
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
   end
 
 

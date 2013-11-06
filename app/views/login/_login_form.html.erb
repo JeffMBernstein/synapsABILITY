@@ -1,0 +1,25 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+    </div>
+    <div class="modal-body">
+      <%= form_for @user, url: login_path do |f| %>
+        <%= flash[:error] %>
+
+        <div class="inputForm">
+          <%= f.label :email %>
+          <%= f.text_field :email  %>
+        </div>
+
+        <div class="inputForm">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
+        <div class="inputForm">
+          <%= f.submit "Login", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
