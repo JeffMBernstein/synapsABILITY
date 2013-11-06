@@ -13,7 +13,7 @@
  *= require_tree .
  */
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="select"], textarea, select {
 	padding: .5em .6em;
 	display: inline-block;
 	border: 1px solid #ccc;
