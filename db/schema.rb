@@ -11,13 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918214907) do
+ActiveRecord::Schema.define(version: 20131109175557) do
 
   create_table "messages", force: true do |t|
     t.string   "subject"
     t.text     "body"
     t.integer  "recipient_id"
     t.integer  "sender_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "services", force: true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.text     "description"
+    t.string   "email"
+    t.integer  "service_id"
+    t.string   "website"
+    t.string   "street"
+    t.string   "city"
+    t.string   "province"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,12 +47,6 @@ ActiveRecord::Schema.define(version: 20130918214907) do
     t.string   "password_digest"
     t.text     "bio"
     t.string   "avatar"
-    t.string   "street"
-    t.string   "city"
-    t.string   "province"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
