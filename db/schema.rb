@@ -11,13 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918214907) do
+ActiveRecord::Schema.define(version: 20131109183447) do
 
   create_table "messages", force: true do |t|
     t.string   "subject"
     t.text     "body"
     t.integer  "recipient_id"
     t.integer  "sender_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "services", force: true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.text     "description"
+    t.string   "email"
+    t.integer  "service_id"
+    t.string   "website"
+    t.string   "street"
+    t.string   "city"
+    t.string   "province"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "question_id"
+    t.integer  "service_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "taggings", ["question_id"], name: "index_taggings_on_question_id"
+  add_index "taggings", ["service_id"], name: "index_taggings_on_service_id"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,20 @@
+<h1><%= @service.name %></h1>
+<p><%= image_tag(@service.avatar) if @service.avatar? %></p>
+<p><%= @service.phone %></p>
+<p><%= @service.description%></p>
+<p><%= link_to @service.website %></p>
+<p><%= @service.street %></p>
+<p><%= @service.city %></p>
+<p><%= @service.province %></p>
+
+
+<%= link_to 'Edit', edit_service_path(@service), method: :get, class: "btn btn-warning" %>  
+<br><br>
+<%= button_to 'Delete', @service, method: :delete,
+    data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+<br>
+<%= button_to "New Service", new_service_path(@service), method: :get, class: "btn btn-primary btn-lg" %> 
+<br>
+<%= button_to "All Services", services_path, method: :get, class:  "btn btn-default" %> 
+
+

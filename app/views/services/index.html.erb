@@ -1,0 +1,29 @@
+<h1>All of the Services listed on SynapsABILITY</h1>
+
+
+
+
+<% @services.each do |service| %>
+
+<div><%= link_to service.name, service_path(service) %></div>
+
+
+<% end %>
+
+<br>
+
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#serviceNew">
+	New Service
+</button>
+
+
+  <div class="modal fade" id="serviceNew" tabindex="-1" role="dialog" aria-labelledby="serviceNew" aria-hidden="true">
+  	<%= render template: 'services/_form' %>
+  </div>
+
+<br>
+
+
+</div>
+
