@@ -1,4 +1,6 @@
 SynapsABILITY::Application.routes.draw do
+  resources :services
+
   resources :messages
 
   resources :users

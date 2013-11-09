@@ -28,8 +28,21 @@ ActiveRecord::Schema.define(version: 20131109183447) do
   end
 
   create_table "services", force: true do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.text     "description"
+    t.string   "email"
+    t.integer  "service_id"
+    t.string   "website"
+    t.string   "street"
+    t.string   "city"
+    t.string   "province"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   create_table "taggings", force: true do |t|
@@ -58,6 +71,12 @@ ActiveRecord::Schema.define(version: 20131109183447) do
     t.string   "password_digest"
     t.text     "bio"
     t.string   "avatar"
+    t.string   "street"
+    t.string   "city"
+    t.string   "province"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
