@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#" style="padding: 5px 15px;"><img alt="synapsABILITY" src="assets/synapsABILITY_logo_navbar.png"></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <%= link_to users_path do %>
+          Home
+        <% end %>
+      </li>
+      <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Questions</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-list"></span> Services</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-tags"></span> Tags</a></li>
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li style="margin-right:2px;">
+        <%= link_to messages_path, style: "padding:0px;" do %>
+          <button type="button" class="btn btn-default btn-lg" style="margin-top:2px;">
+            <span class="glyphicon glyphicon-envelope"></span>
+          </button>
+        <% end %>
+
+      </li>
+      <li style="margin-right:2px;"><a href="#" style="padding:0px;">
+        <button type="button" class="btn btn-default btn-lg" style="margin-top:2px;">
+          <span class="glyphicon glyphicon-cog"></span>
+        </button>
+      </a></li>
+      <li><a href="#" style="padding:0px;">
+        <button type="button" class="btn btn-default btn-lg" style="margin-top:2px;">
+          <span class="glyphicon glyphicon-user"></span> <%= @current_user.full_name %>
+        </button>
+      </a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>

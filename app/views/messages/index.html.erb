@@ -1,0 +1,31 @@
+<div class="container"> <% gmaps4rails(@json) %>
+	
+	<h1><%= @current_user.username %></h1>
+	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createMessage">
+			Create Message
+	</button>
+
+
+	<h2>All My Messages</h2>
+	<table class="table" style="float:left;">
+		<tbody>
+		  <tr>
+				<td><b>From<b></td>
+				<td><b>Subject<b></td>
+				<td><b>Body<b></td>
+			</tr>
+			<% @messages.each do |message| %>
+				<% if(message.recipient_id == @current_user.id) %>
+					<tr>
+						<td><%= User.find_by(params[message.sender_id]).full_name %></td>
+						<td><%= message.subject %></td>
+						<td><%= message.body %></td>
+					</tr>						
+				<% end %>
+			<% end %>
+		</tbody>
+	</table>
+
+<div class="modal fade" id="createMessage" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+	<%= render template: 'messages/_message_form' %>
+</div>
