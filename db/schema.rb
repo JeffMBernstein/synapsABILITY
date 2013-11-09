@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109175557) do
+ActiveRecord::Schema.define(version: 20131109183330) do
 
   create_table "messages", force: true do |t|
     t.string   "subject"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20131109175557) do
     t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   create_table "users", force: true do |t|
