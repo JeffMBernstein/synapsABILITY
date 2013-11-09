@@ -71,12 +71,6 @@ ActiveRecord::Schema.define(version: 20131109183447) do
     t.string   "password_digest"
     t.text     "bio"
     t.string   "avatar"
-    t.string   "street"
-    t.string   "city"
-    t.string   "province"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
