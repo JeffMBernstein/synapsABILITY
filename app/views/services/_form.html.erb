@@ -1,0 +1,57 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title" id="myModalLabel">New Service</h4>
+    </div>
+    <div class="modal-body">
+      <%= form_for @service do |f| %>
+        <%= flash[:error] %>
+
+        <div class="inputForm">
+          <%= f.label :name %>
+          <%= f.text_field :name  %>
+        </div>
+
+        <div class="inputForm">
+          <%= f.label :phone %>
+          <%= f.text_field :phone %>
+        </div>
+
+          <div class="inputForm">
+          <%= f.label :description %>
+          <%= f.text_area :description %>
+        </div>
+
+          <div class="inputForm">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+
+          <div class="inputForm">
+          <%= f.label :website %>
+          <%= f.text_field :website %>
+        </div>
+
+          <div class="inputForm">
+          <%= f.label :street %>
+          <%= f.text_field :street %>
+        </div>
+
+        <div class="inputForm">
+          <%= f.label :city %>
+          <%= f.text_field :city %>
+        </div>
+
+        <div class="inputForm">
+          <%= f.label :province %>
+          <%= f.text_field :province %>
+        </div>
+
+        <div class="inputForm">
+          <%= f.submit "Create", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div><!-- /.modal-body -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

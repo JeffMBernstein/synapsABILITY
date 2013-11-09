@@ -5,32 +5,35 @@ class ServicesController < ApplicationController
 
   def index
     @services = Service.all
+    @service = Service.new
   end
 
   def new
     @service = Service.new
-    
   end
 
   def create
     @service = Service.new(service_params)
-      @service.save
+    if @service.save
       redirect_to services_path
+    else
+    	flash[:error] = "Failed to create service."
     end
+  end
 
   def edit
     @service = Service.find(params[:id])
   end
- 
+
   def update
-    @service = Service.find(params[:id])
-      if @service.update(params[:service].permit(:title, :text))
-        redirect_to @service notice: "Successfully updated Service."
-      else
-        render 'edit'
-      end
-    end 
- 
+	  @service = Service.find(params[:id])
+		  if @service.update(params[:service])
+		    redirect_to(@service)
+		  else
+		    render :edit
+	  end
+	end
+
   def destroy 
     @service = Service.find(params[:id])
     @service.destroy
