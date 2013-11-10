@@ -16,9 +16,21 @@
 			<td><%= question.tag %></td>
 			<td><%= question.upvote %></td>
 		</tr>
+		<tr>
+			<td>
+				<a href="#" data-toggle="modal" data-target="#createComment">
+					Add comment
+				</a>
+			</td>
+		</tr>
 	</table>
 <% end %>
 
 <div class="modal fade" id="createQuestion" tabindex="-1" role="dialog" aria-labelledby="Create Question" aria-hidden="true">
 	<%= render template: 'questions/_form' %>
 </div>
+
+<div class="modal fade" id="createComment" tabindex="-1" role="dialog" aria-labelledby="Create Comment" aria-hidden="true">
+	<%= render template: 'comments/_form' %>
+</div>
+
