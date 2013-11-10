@@ -5,6 +5,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.text :description
       t.integer :upvote
       t.references :comment
+      t.string :tag
 
       t.timestamps
     end
