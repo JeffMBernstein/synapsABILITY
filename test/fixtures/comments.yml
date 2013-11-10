@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  upvote: 1
+  downvote: 1
+  question_id: 
+
+two:
+  description: MyText
+  upvote: 1
+  downvote: 1
+  question_id: 

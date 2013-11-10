@@ -1,5 +1,7 @@
 SynapsABILITY::Application.routes.draw do
 
+  resources :comments
+
   resources :services
 
   resources :questions

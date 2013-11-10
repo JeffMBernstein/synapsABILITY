@@ -1,0 +1,24 @@
+<h1>All of the Questions:</h1>
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createQuestion">
+			Create Question
+	</button>
+
+<% @questions.each do |question| %>
+	<table>
+		<tr>
+			<th><%= question.title %></th>
+		</tr>
+		<tr>
+			<td><%= question.description %></td>
+		</tr>
+		<tr>
+			<td><%= question.tag %></td>
+			<td><%= question.upvote %></td>
+		</tr>
+	</table>
+<% end %>
+
+<div class="modal fade" id="createQuestion" tabindex="-1" role="dialog" aria-labelledby="Create Question" aria-hidden="true">
+	<%= render template: 'questions/_form' %>
+</div>

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131109183330) do
+ActiveRecord::Schema.define(version: 20131110210838) do
+
+  create_table "comments", force: true do |t|
+    t.text     "description"
+    t.integer  "upvote"
+    t.integer  "downvote"
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["question_id"], name: "index_comments_on_question_id"
 
   create_table "messages", force: true do |t|
     t.string   "subject"
@@ -26,7 +37,7 @@ ActiveRecord::Schema.define(version: 20131109183330) do
     t.string   "title"
     t.text     "description"
     t.integer  "upvote"
-    t.integer  "comment_id"
+    t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -44,6 +55,7 @@ ActiveRecord::Schema.define(version: 20131109183330) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
+    t.string   "tag"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar"
@@ -66,7 +78,7 @@ ActiveRecord::Schema.define(version: 20131109183330) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-  
+
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "first_name"
@@ -75,6 +87,12 @@ ActiveRecord::Schema.define(version: 20131109183330) do
     t.string   "password_digest"
     t.text     "bio"
     t.string   "avatar"
+    t.string   "street"
+    t.string   "city"
+    t.string   "province"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

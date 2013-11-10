@@ -18,14 +18,18 @@
           Home
         <% end %>
       </li>
-      <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Questions</a></li>
+      <li>
+        <%= link_to questions_path do %>
+          <span class="glyphicon glyphicon-question-sign"></span> Questions
+          <% end %>
+      </li>
       <li><a href="#"><span class="glyphicon glyphicon-list"></span> Services</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-tags"></span> Tags</a></li>
     </ul>
     
     <ul class="nav navbar-nav navbar-right">
       <li style="margin-right:2px;">
-        <%= link_to messages_path, style: "padding:0px;" do %>
+        <%= link_to messages_path, style:"padding:0px;" do %>
           <button type="button" class="btn btn-default btn-lg" style="margin-top:2px;">
             <span class="glyphicon glyphicon-envelope"></span>
           </button>
