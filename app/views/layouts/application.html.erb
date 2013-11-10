@@ -8,8 +8,15 @@
 </head>
 
 <body>
-	<%= render template: 'layouts/_navbar' %>
-	<%= yield %>
+	<!-- NAVBAR -->
+	<% if session[:user_id] %>
+		<%= render template: 'layouts/_navbar' %>
+	<% end %>
+
+	<!-- CONTENT -->
+	<div class="content">
+		<%= yield %>
+	</div>
 </body>
 
 <%= yield :scripts %>

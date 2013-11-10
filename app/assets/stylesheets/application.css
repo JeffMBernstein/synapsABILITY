@@ -25,7 +25,8 @@ input[type="text"], input[type="password"], input[type="select"], textarea, sele
 	-ms-transition: .3s linear border;
 	-o-transition: .3s linear border;
 	transition: .3s linear border;
-	vertical-align: middle;	
+	vertical-align: middle;
+	width:auto;	
 }
 
 label {

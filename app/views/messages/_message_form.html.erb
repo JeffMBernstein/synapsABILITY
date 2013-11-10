@@ -6,19 +6,19 @@
     </div>
     <div class="modal-body">
 
-			<%= form_tag(new_message_path, method: :post) do %> 
-				<%= hidden_field_tag :sender_id, value: @current_user.id %>
+			<%= form_for @message do |f| %> 
+				<%= f.hidden_field :sender_id, value: @current_user.id %>
 				<div class="inputForm"> 
-					<%= select_tag(:recipient_id, options_from_collection_for_select(User.all, "id", "full_name")) %>
-				</div class="inputForm">
+					<%= f.select(:recipient_id, options_from_collection_for_select(User.all, "id", "full_name")) %>
+				</div>
 				<div class="inputForm"> 
-					<%= text_field_tag(:subject) %> 
-				</div class="inputForm">
+					<%= f.text_field(:subject, placeholder: "Subject") %> 
+				</div>
 				<div class="inputForm">
-					<%= text_area_tag(:body, "Enter Message Here", size: "24x6") %>
-				</div class="inputForm">
+					<%= f.text_area(:body, cols: 20, rows: 10, placeholder: "Message") %>
+				</div>
 
-				<%= submit_tag "Send Message", class: "btn btn-primary" %>
+				<%= f.submit "Send Message", class: "btn btn-primary" %>
 
 			<% end %>
 
