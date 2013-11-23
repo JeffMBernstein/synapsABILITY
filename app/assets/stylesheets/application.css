@@ -52,3 +52,7 @@ label {
 a {
 	padding: 0px;
 }
+
+table {
+	border:none;
+}

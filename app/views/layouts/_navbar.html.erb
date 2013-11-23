@@ -41,11 +41,13 @@
           <span class="glyphicon glyphicon-cog"></span>
         </button>
       </a></li>
-      <li><a href="#" style="padding:0px;">
-        <button type="button" class="btn btn-default btn-lg" style="margin-top:2px;">
-          <span class="glyphicon glyphicon-user"></span> <%= @current_user.full_name %>
-        </button>
-      </a></li>
+      <li>
+        <%= link_to user_path(@current_user), style: "padding:0px;" do %>
+          <button type="button" class="btn btn-default btn-lg" style="margin-top:2px;">
+            <span class="glyphicon glyphicon-user"></span> <%= @current_user.full_name %>
+          </button>
+        <% end %>
+      </li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
