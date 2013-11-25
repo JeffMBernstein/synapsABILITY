@@ -24,8 +24,17 @@ input[type="text"], input[type="password"], input[type="select"], textarea, sele
 	-ms-transition: .3s linear border;
 	-o-transition: .3s linear border;
 	transition: .3s linear border;
-	vertical-align: middle;
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width:75%;
 	width:auto;	
+	vertical-align: middle;
+	float:right;
+}
+
+input[type="submit"] {
+	float:right;
 }
 
 label {
@@ -38,15 +47,8 @@ label {
 
 .inputForm {
 	padding: 0.2em;
-}
-
-.inputForm input[type="submit"] {
-	float:right;
-	margin-bottom:1em;
-}
-
-.modal-content {
-	display:inline-block;
+	clear:both;
+	overflow:hidden;
 }
 
 a {

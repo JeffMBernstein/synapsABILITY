@@ -5,8 +5,28 @@ $(document).ready(function() {
 		e.preventDefault();
 		e.stopPropagation();
 
-		window.bootbox.alert("This was clicked");
-		console.log("This was hit.");	
+		var id = $(this).attr('data-userId');
+
+		$.ajax('/users/#{id}/update.json', {
+			username: $('#username').val(),
+			first_name: $('#first_name').val(),
+			last_name: $('#last_name').val(),
+			email: $('#email').val(),
+			password: $('#password').val(),
+			password_confirmation: $('#password_confirmation').val(),
+			bio: $('#bio').val(),
+			address: $('#address').val(),
+			city: $('#city').val(),
+			province: $('#province').val()
+		}, function(data) {
+			if(data){
+				window.bootbox.alert("Profile updated");
+				window.location.reload(true);
+			} else {
+				window.bootbox.error("Profile update unsuccessful");	
+			}
+		});
+
 	});
 
 });

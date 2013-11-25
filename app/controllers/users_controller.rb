@@ -1,7 +1,9 @@
-class UsersController < ApplicationController
+  class UsersController < ApplicationController
 
   before_action :require_current_user, except: [:new, :create]
 
+  respond_to :json
+  
   def index
   	@users = User.all
     @message = Message.new  

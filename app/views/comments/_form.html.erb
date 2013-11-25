@@ -9,7 +9,7 @@
 			<%= form_for @comment do |f| %> 
         <div class="inputForm">
           <%= f.label :description %>
-          <%= f.text_area :description, cols: 20, rows: 20 %>
+          <%= f.text_area :description, cols: 20, rows: 5 %>
         </div>
         <div class="inputForm">
           <%= f.submit "Create Question", class: "btn btn-success" %>
