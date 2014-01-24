@@ -14,8 +14,10 @@ class MessagesController < ApplicationController
   def create
   	@message = Message.new(message_params)
     if @message.save
-      redirect_to user_path(@current_user)
+      flash[:message] = "Successfully sent message!"
+      redirect_to messages_path
     else
+      flash[:error] = "Sorry. Seems like there was an error sending the message."
       render action: :new
     end
   end

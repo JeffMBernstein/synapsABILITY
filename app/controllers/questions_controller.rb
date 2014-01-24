@@ -15,8 +15,10 @@ class QuestionsController < ApplicationController
 	def create
 		@question = Question.new(question_params)
 		if @question.save
+			flash[:message] = "Successfully created question!"
 			redirect_to questions_path
 		else
+			flash[error] = "Failed to create question. Please try again."
 			render action: :new
 		end
 	end

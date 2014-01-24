@@ -1,20 +1,13 @@
 <div>
 	<h1>Your Dashboard</h1>
   <div class="span6" style="width:70%; float:left;">
-	  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createMessage">
-			Create Message
-		</button>
 
 		<hr>
-
-	  <% @users.each do |user| %>
-	  	<%= link_to user.full_name, user_path(user) %>
-	  	<hr>
-	  <% end %>
+		Users in your network:<br/><br/>
+		<ul>
+		  <% @users.each do |user| %>
+		  	<li><%= link_to user.full_name, user_path(user) %></li>
+		  <% end %>
+		</ul>
 	</div>
 </div>
-
-<div class="modal fade" id="createMessage" tabindex="-1" role="dialog" aria-labelledby="Create Message" aria-hidden="true">
-	<%= render template: 'messages/_message_form' %>
-</div>
- 

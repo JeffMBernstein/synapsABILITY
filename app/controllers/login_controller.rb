@@ -8,6 +8,7 @@ class LoginController < ApplicationController
 		@user = User.find_by(email: params[:user][:email])
 
 		if @user && login_valid?(@user)
+			flash[:message] = "Successfully created account! Please log in."
 			session[:user_id] = @user.id
 			redirect_to users_path
 		else

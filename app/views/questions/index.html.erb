@@ -1,8 +1,18 @@
 <h1>All of the Questions:</h1>
 
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createQuestion">
-			Create Question
-	</button>
+		Create Question
+</button>
+
+<% if flash[:message] %>
+	<div class="success-message">
+		<%= flash[:message] %>
+	</div>
+<% elsif flash[:error] %>
+	<div class="error-message">
+		<%= flash[:error] %>
+	</div>
+<% end %>
 
 <% @questions.each do |question| %>
 	<table>

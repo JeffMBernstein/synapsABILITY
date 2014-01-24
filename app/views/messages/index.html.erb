@@ -4,8 +4,15 @@
 	<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createMessage">
 			Create Message
 	</button>
-
-
+	<% if flash[:message] %>
+		<div class="success-message">
+			<%= flash[:message] %>
+		</div>
+	<% elsif flash[:error] %>
+		<div class="error-message">
+			<%= flash[:error] %>
+		</div>
+	<% end %>
 	<h2>All My Messages</h2>
 	<table class="table" style="float:left;">
 		<tbody>

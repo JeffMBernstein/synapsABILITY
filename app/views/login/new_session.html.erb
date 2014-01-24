@@ -1,18 +1,21 @@
 
 <%= form_for @user, url: login_path do |f| %>
+  <%= flash[:message] %>
   <%= flash[:error] %>
 
-  <div style="width: 250px">
+  <div style="width: 250px;">
     <%= f.label :email %>
     <br>
     <%= f.text_field :email %>
   </div>
 
-  <div style="width: 250px">
+  <div style="width: 250px;">
     <%= f.label :password %>
     <br>
     <%= f.password_field :password %>
   </div>
-  <br>
-  <div><%= f.submit "Login", class: "btn btn-primary" %></div>
+
+  <div style="width: 250px; clear:both;">
+    <%= f.submit "Login", class: "btn btn-primary" %>
+  </div>
 <% end %>

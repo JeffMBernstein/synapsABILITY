@@ -6,7 +6,6 @@
   
   def index
   	@users = User.all
-    @message = Message.new  
   end
 
   def new
@@ -16,8 +15,10 @@
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:message] = "Successfully created user. Please log in."
       redirect_to login_path
     else
+      flash[:error] = "Successfully created user. Please log in."
       render action: :new
     end
   end
@@ -26,7 +27,6 @@
   	@user = User.find(params[:id])
     @message = Message.new
     @messages = Message.all
-   
   end
 
   def edit

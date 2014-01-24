@@ -4,7 +4,9 @@
 		<h3><p class="text-muted">synapsABILITY</p></h3>
 	</div>
 	<hr>
-	
+	<%= flash[:message] %>
+  <%= flash[:error] %>
+  <br/><br/>
 	<div class="well">
 		<%= render 'form' %>
 	</div>

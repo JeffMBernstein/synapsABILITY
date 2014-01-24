@@ -9,11 +9,12 @@
 
 	<body>
 		<!-- NAVBAR -->
-		<% if session[:user_id] %>
+		<% if session[:user_id]  %>
 			<%= render template: 'layouts/_navbar' %>
 		<% end %>
 
 		<%= yield %>
 	</body>
 
+	<%= yield :scripts %>
 </html>
