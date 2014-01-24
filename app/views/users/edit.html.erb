@@ -1,0 +1,55 @@
+
+	<h1><%= @current_user.full_name %> Profile</h1>
+	
+
+
+	<h2>All My Messages</h2>
+	<table style="float:left;">
+		<tbody>
+		  <tr>
+	  		<th>Username</th>
+	  		<td><input type="text" value="<%= @current_user.username %>" id="username"/></td>
+		  </tr>
+		  <tr>
+		  	<th>First Name</th>
+		  	<td><input type="text" value="<%= @current_user.first_name %>" id="first_name"/></td>
+		  </tr>
+		  <tr>
+	 			<th>Last Name</th>
+		  	<td><input type="text" value="<%= @current_user.last_name %>" id="last_name"/></td>
+		  </tr>
+		  <tr>
+		  	<th>Email</th>
+		  	<td><input type="text" value="<%= @current_user.email %>" id="email"/></td>
+		  </tr>
+		  <tr>
+		  	<th>Password</th>
+		  	<td><input type="password" placeholder="********" id="password"/></td>
+		  </tr>
+		  <tr>
+		  	<th>Password Confirmation</th>
+		  	<td><input type="password" placeholder="********" id="password_confirmation"/></td>
+		  </tr>
+		  <tr>
+		  	<th>Bio</th>
+		  	<td><textarea placeholder="Describe yourself!" id="bio"></textarea></td>
+		  </tr>
+		  <tr>
+		  	<th>Address</th>
+		  	<td><input type="text" value="<%= @current_user.street %>" placeholder="e.g. 123 Fake Street" id="street"/></td>
+		  </tr>
+		  <tr>
+		  	<th>City</th>
+		  	<td><input type="text" value="<%= @current_user.city %>" placeholder="e.g. Toronto" id="city"/></td>
+		  </tr>
+		  <tr>
+		  	<th>Province</th>
+		  	<td><input type="text" value="<%= @current_user.province %>" placeholder="e.g. Ontario" id="province"/></td>
+		  </tr>
+		  <tr>
+		  	<td>
+		  		<button type="submit" class="btn btn-default" id="updateUserInfo" data-userId="<%= @current_user.id %>">Update Profile</button>
+	  		</td>
+	  	</tr>
+		</tbody>
+	</table>
