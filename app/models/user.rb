@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+  has_many :user_connections
+  has_many :connections, through: :user_connections
+
 	mount_uploader :avatar, AvatarUploader
 
 	validates :username, :first_name, :last_name, :email, presence: true
