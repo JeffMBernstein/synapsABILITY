@@ -1,4 +1,4 @@
-
+<%= flash[:success] %>
 	<h1><%= @user.full_name %> Profile</h1>
 	
 	<table style="float:left;">
@@ -44,6 +44,12 @@
 		  			<% end %>
 		  		</td>
 		  	</tr>
+	  	<% else %>
+	  		<tr>
+	  			<td>
+	  				<%= link_to "Connect", new_user_connection_path(connection_id: @user.id), class: 'btn' %>
+  				</td>
+				</tr>
 	  	<% end %>
 		</tbody>
 	</table>

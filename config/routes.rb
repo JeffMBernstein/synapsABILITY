@@ -10,6 +10,8 @@ SynapsABILITY::Application.routes.draw do
 
   resources :users
 
+  resources :user_connections
+  
   root 'welcome#index'
   get '/login', to: 'login#new_session'
   post '/login', to: 'login#create_session'
