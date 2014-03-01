@@ -1,31 +1,33 @@
-<div>
-  <center>
-	<!-- Logo -->
-	<div class="fade1 logo"><img src="assets/synapsABILITY_logo.png" alt="Logo"></div>
-	
-	<!-- Title -->     
-  <h2 class="fade2">For families like ours.</h2>
 
-  <!-- Sign up and Log In buttons -->
-	<div>
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#userSignUp">
-			Sign Up
-		</button>
+<div class="homepage">
+	<div class="centered">
+		<!-- Logo -->
+		<div class="login-icon">
+			<div class="fade1 logohome"><img src="assets/synapsABILITY_logo.png" alt="Logo"></div>
+			
+			<!-- Title -->     
+		  <h2 class="introfont">For families <br> <em>like ours.</em></h2>
+		</div>
 
+	  <!-- Sign up and Log In buttons -->
+	  <div class="bubble">
+			<div>
+				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#userSignUp">
+					Sign Up
+				</button>
+				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login">
+					Log In
+				</button> 
+		  </div><!-- END SIGN UP AND LOGIN -->
+		 </div>   
+	</div>
 
-		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login">
-			Log In
-		</button> 
-  </div><!-- END SIGN UP AND LOGIN -->   
-  </center> 
-</div>
+	<div class="modal fade" id="userSignUp" tabindex="-1" role="dialog" aria-labelledby="userSignUp" aria-hidden="true">
+		<%= render template: 'users/_form' %>
+	</div>
 
-<div class="modal fade" id="userSignUp" tabindex="-1" role="dialog" aria-labelledby="userSignUp" aria-hidden="true">
-	<%= render template: 'users/_form' %>
-</div>
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+		<%= render template: 'login/_login_form' %>
+	</div>
 
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
-	<%= render template: 'login/_login_form' %>
-</div>
-
-
+</div> <!-- class homepage-->   

@@ -1,55 +1,66 @@
 <%= flash[:success] %>
-	<h1><%= @user.full_name %> Profile</h1>
-	
-	<table style="float:left;">
-		<tbody>
-		  <tr>
-	  		<th>Username</th>
-	  		<td><%= @user.username %></td>
-		  </tr>
-		  <tr>
-		  	<th>First Name</th>
-		  	<td><%= @user.first_name %></td>
-		  </tr>
-		  <tr>
-	 			<th>Last Name</th>
-		  	<td><%= @user.last_name %></td>
-		  </tr>
-		  <tr>
-		  	<th>Email</th>
-		  	<td><%= @user.email %></td>
-		  </tr>
-		  <tr>
-		  	<th>Bio</th>
-		  	<td><%= @user.bio %></td>
-		  </tr>
-		  <tr>
-		  	<th>Address</th>
-		  	<td><%= @user.street %></td>
-		  </tr>
-		  <tr>
-		  	<th>City</th>
-		  	<td><%= @user.city %></td>
-		  </tr>
-		  <tr>
-		  	<th>Province</th>
-		  	<td><%= @user.province %></td>
-		  </tr>
-		  <% if @user.id == @current_user.id %>
-			  <tr>
-			  	<td>
-			  		
-			  		<%= link_to edit_user_path(@user) do %>
-			  			<button class="btn btn-default">Edit Profile</button>
-		  			<% end %>
-		  		</td>
-		  	</tr>
-	  	<% else %>
-	  		<tr>
-	  			<td>
-	  				<%= link_to "Connect", new_user_connection_path(connection_id: @user.id), class: 'btn' %>
-  				</td>
-				</tr>
-	  	<% end %>
-		</tbody>
-	</table>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="profile-avatar">
+					<img src="<%= asset_path('avatar-2-lg.jpg')%>" class="profile-avatar-img thumbnail" alt="Profile Image">
+				</div>
+				<table class="well thumbnail">
+				  <tr>
+			  		<th>Username</th>
+			  		<td><%= @user.username %></td>
+			  	</tr>
+			  	<tr>
+			  		<th>First Name</th>
+			  		<td><%= @user.first_name %></td>
+			  	</tr>
+			  	<tr>
+			  		<th>Last Name</th>
+			  		<td><%= @user.last_name %></td>
+			  	</tr>
+			  	<tr>
+			  		<th>Email</th>
+			  		<td><%= @user.email %></td>
+			  	</tr>
+			  	<tr>
+			  		<th>Bio</th>
+			  		<td><%= @user.bio %></td>
+			  	</tr>
+			  	<tr>
+			  		<th>Address</th>
+			  		<td><%= @user.street %></td>
+			  	</tr>
+			  	<tr>
+			  		<th>City</th>
+			  		<td><%= @user.city %></td>
+			  	</tr>
+			  	<tr>
+			  		<th>Province</th>
+			  		<td><%= @user.province %></td>
+				  </tr>
+				  	<% if @user.id == @current_user.id %>
+					<tr>
+				  	<td>
+				  		<%= link_to edit_user_path(@user) do %>
+				  			<button class="btn btn-default">Edit Profile</button>
+			  			<% end %>
+			  		</td>
+			  	</tr>
+			  		<% else %>
+			  	<tr>
+			  		<td>
+			  			<%= link_to "Connect", new_user_connection_path(connection_id: @user.id), class: 'btn' %>
+		  			</td>
+					</tr>
+			  <% end %>
+			</table>
+		</div><!-- div.col-md-3"-->
+			<div class="col-md-6">
+				<h1><%= @user.full_name %> Profile</h1>
+				
+	   </div>
+		</div>
+	</div>
+</body>
+

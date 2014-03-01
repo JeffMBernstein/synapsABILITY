@@ -7,47 +7,44 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#" style="padding: 5px 15px;"><img alt="synapsABILITY" src="assets/synapsABILITY_logo_navbar.png"></a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active">
-        <%= link_to users_path do %>
-          Home
-        <% end %>
+      <li>
+        <a href="#" style="padding: 0px; display: inline;">
+          <%= link_to users_path do %>
+            <img src="<%= asset_path('synapsABILITY_logo_navbar.png')%>" alt="synapsABILITY" >
+          <% end %>
+        </a>
       </li>
       <li>
         <%= link_to questions_path do %>
           <span class="glyphicon glyphicon-question-sign"></span> Questions
-          <% end %>
-      </li>
-      <li><a href="#"><span class="glyphicon glyphicon-list"></span> Services</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-tags"></span> Tags</a></li>
-    </ul>
-    
-    <ul class="nav navbar-nav navbar-right">
-      <li style="margin-right:2px;">
-        <%= link_to messages_path, style:"padding:0px;" do %>
-          <button type="button" class="btn btn-default btn-lg" style="margin-top:2px;">
-            <span class="glyphicon glyphicon-envelope"></span>
-          </button>
-        <% end %>
-
-      </li>
-      <li style="margin-right:2px;"><a href="#" style="padding:0px;">
-        <%= link_to logout_path, style:'padding:0px;' do %>
-          <button type="button" class="btn btn-default btn-lg" style="margin-top:2px;">
-            <span class="glyphicon glyphicon-log-out"></span>
-          </button>
         <% end %>
       </li>
       <li>
-        <%= link_to user_path(@current_user), style: "padding:0px;" do %>
-          <button type="button" class="btn btn-default btn-lg" style="margin-top:2px;">
+        <%= link_to services_path do %>
+          <span class="glyphicon glyphicon-list"></span> Services
+        <% end %>
+      </li>
+    </ul>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <%= link_to messages_path do %>
+          <span class="glyphicon glyphicon-envelope"></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to logout_path do %>
+            <span class="glyphicon glyphicon-log-out"></span>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to user_path(@current_user) do %>
             <span class="glyphicon glyphicon-user"></span> <%= @current_user.full_name %>
-          </button>
         <% end %>
       </li>
     </ul>

@@ -1,4 +1,7 @@
 class ServicesController < ApplicationController
+  
+  before_action :require_current_user
+
 	def show
     @service = Service.find(params[:id])   
   end

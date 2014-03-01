@@ -1,36 +1,32 @@
-<h1>All of the Services listed on SynapsABILITY</h1>
+<body>
+	<div class="container">
+		<h1>All of the Services listed on SynapsABILITY</h1>
+		<div class="well">
+			<table>
+				<% @services.each do |service| %>
+						<tr>
+							<th>Service</th>
+							<th>City</th>
+							<th>Description</th>
+							<th>Options</th>
+						</tr>
+						<tr>
+							<td><%= service.name %></td>
+							<td><%= service.city %></td>
+							<td><%= service.description %></td>
+							<td><%= link_to 'Edit', edit_service_path(@service), method: :get, class: "btn btn-warning" %> <br><%= button_to 'Delete', @service, method: :delete,
+					    data: { confirm: "Are you sure?" }, class: "btn btn-danger" %><br></td>
+						</tr>
+				 <% end %> 
+			</table>
+		<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#serviceNew">
+			New Service
+		</button>
+		  <div class="modal fade" id="serviceNew" tabindex="-1" role="dialog" aria-labelledby="serviceNew" aria-hidden="true">
+		  	<%= render template: 'services/_form' %>
+		  </div>
+		<br>
+		</div> <!-- Closes div.container --> 
+	</div> <!-- Closes div.container --> 
 
-
-<table>
-	<% @services.each do |service| %>
-			<tr>
-				<th>Service</th>
-				<th>City</th>
-				<th>Description</th>
-				<th>Options</th>
-			</tr>
-			<tr>
-				<td><%= service.name %></td>
-				<td><%= service.city %></td>
-				<td><%= service.description %></td>
-				<td><%= link_to 'Edit', edit_service_path(@service), method: :get, class: "btn btn-warning" %> <br><%= button_to 'Delete', @service, method: :delete,
-		    data: { confirm: "Are you sure?" }, class: "btn btn-danger" %><br></td>
-			</tr>
-	 <% end %> 
-</table>
-
-
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#serviceNew">
-	New Service
-</button>
-
-
-  <div class="modal fade" id="serviceNew" tabindex="-1" role="dialog" aria-labelledby="serviceNew" aria-hidden="true">
-  	<%= render template: 'services/_form' %>
-  </div>
-
-<br>
-
-
-</div>
-
+</body>

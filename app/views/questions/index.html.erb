@@ -1,46 +1,49 @@
-<h1>All of the Questions:</h1>
+<body>
+	<div class="container">
+		<h1>Recent Questions</h1>
+		<div class="well">
+			<% @questions.each do |question| %>
+				<table>
+					<tr>
+						<th><%= question.title %></th>
+					</tr>
+					<tr>
+						<td><%= question.description %></td>
+					</tr>
+					<tr>
+						<td><%= question.tag %></td>
+						<td><%= question.upvote %></td>
+					</tr>
+					<tr>
+						<td>
+							<a href="#" data-toggle="modal" data-target="#createComment">
+								Add comment
+							</a>
+						</td>
+					</tr>
+				</table>
+			<% end %>
+		</div>
+		<div>
+			<button class="btn btn-primary btn-lg" style="float:right;" data-toggle="modal" data-target="#createQuestion">
+					Create Question
+			</button>
+			<% if flash[:message] %>
+				<div class="success-message">
+					<%= flash[:message] %>
+				</div>
+			<% elsif flash[:error] %>
+				<div class="error-message">
+					<%= flash[:error] %>
+				</div>
+			<% end %>
+			<div class="modal fade" id="createQuestion" tabindex="-1" role="dialog" aria-labelledby="Create Question" aria-hidden="true">
+				<%= render template: 'questions/_form' %>
+			</div>
 
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createQuestion">
-		Create Question
-</button>
-
-<% if flash[:message] %>
-	<div class="success-message">
-		<%= flash[:message] %>
+			<div class="modal fade" id="createComment" tabindex="-1" role="dialog" aria-labelledby="Create Comment" aria-hidden="true">
+				<%= render template: 'comments/_form' %>
+			</div>
+		</div>
 	</div>
-<% elsif flash[:error] %>
-	<div class="error-message">
-		<%= flash[:error] %>
-	</div>
-<% end %>
-
-<% @questions.each do |question| %>
-	<table>
-		<tr>
-			<th><%= question.title %></th>
-		</tr>
-		<tr>
-			<td><%= question.description %></td>
-		</tr>
-		<tr>
-			<td><%= question.tag %></td>
-			<td><%= question.upvote %></td>
-		</tr>
-		<tr>
-			<td>
-				<a href="#" data-toggle="modal" data-target="#createComment">
-					Add comment
-				</a>
-			</td>
-		</tr>
-	</table>
-<% end %>
-
-<div class="modal fade" id="createQuestion" tabindex="-1" role="dialog" aria-labelledby="Create Question" aria-hidden="true">
-	<%= render template: 'questions/_form' %>
-</div>
-
-<div class="modal fade" id="createComment" tabindex="-1" role="dialog" aria-labelledby="Create Comment" aria-hidden="true">
-	<%= render template: 'comments/_form' %>
-</div>
-
+</body>
