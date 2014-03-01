@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20140131022926) do
   create_table "user_connections", force: true do |t|
     t.integer  "user_id"
     t.integer  "connection_id"
+    t.integer  "connection_status", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
