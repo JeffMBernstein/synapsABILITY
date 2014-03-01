@@ -2,14 +2,14 @@ class UserConnectionsController < ApplicationController
 	before_action :require_current_user
 
 	def index
-		@connections = UserConnection.all.select { |connection| connection.user_id == @current_user.id }
+		@connections = UserConnection.all.select { |connection| connection.user_id == @current_user.id || connection.connection_id == @current_user.id }
 		
-		connection_ids = Array.new
-		@connections.each do |connection|
-			connection_ids << connection.connection_id
-		end
+		# connection_ids = Array.new
+		# @connections.each do |connection|
+		# 	connection_ids << connection.connection_id
+		# end
 
-		@current_user_connections = User.find(connection_ids)
+		# @current_user_connections = User.find(connection_ids)
 	end
 	
 	def new

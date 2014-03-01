@@ -10,13 +10,24 @@
 		Users in your network:<br/><br/>
 		<ul>
 		  <% @connections.each do |connection| %>
-		  	<li>
-		  		<%= @current_user_connections[0].full_name %> - 
-		  		<% if connection.connection_status == 0 %>
-		  			Pending --> <%= link_to "Add Connection", accept_user_connection_user_connection_path(id: connection.id) %>
-	  			<% else %>
-	  				Accepted
-  				<% end %>
+		  	<li> 
+		  		<% if connection.connection_id == @current_user.id %>
+		  			<%= User.find(connection.user_id).full_name %> -
+
+		  			<% if connection.connection_status == 0 %>
+		  				<%= link_to "Accept Connection", accept_user_connection_user_connection_path(id: connection.id) %>
+  					<% else %>
+  						Accepted
+  					<% end %>
+
+	  			<% else %> 
+	  				<%= User.find(connection.connection_id).full_name %> - 
+	  				<% if connection.connection_status == 0 %>
+	  				  Pending
+  				  <% else %>
+  				  	Accepted
+  				  <% end %>
+		  		<% end %>
 		  	</li>
 		  <% end %>
 		</ul>
