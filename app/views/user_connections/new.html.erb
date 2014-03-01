@@ -6,7 +6,7 @@
 	<%= form_for @user_connection, method: :post do |form| %>
 		<div class="form form-actions">
 			<%= form.hidden_field :connection_id, value:@connection.id %>
-			<%= submit_tag "Yes, Add Conection", class: 'btn btn-primary' %>
+			<%= submit_tag "Yes, Add Connection", class: 'btn btn-primary' %>
 			<%= link_to 'Cancel', user_path(@connection), class: 'btn' %>
 	<% end %>
 <% end %>

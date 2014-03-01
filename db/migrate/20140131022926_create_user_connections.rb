@@ -3,6 +3,7 @@ class CreateUserConnections < ActiveRecord::Migration
     create_table :user_connections do |t|
     	t.integer :user_id
     	t.integer :connection_id
+    	t.integer :connection_status, :default => 0
 
       t.timestamps
     end

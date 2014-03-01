@@ -1,0 +1,24 @@
+<div>
+	<div>
+		<%= flash[:success] %>
+		<%= flash[:error] %>
+	</div>
+	<h1>Your Friends</h1>
+  <div class="span6" style="width:70%; float:left;">
+
+		<hr>
+		Users in your network:<br/><br/>
+		<ul>
+		  <% @connections.each do |connection| %>
+		  	<li>
+		  		<%= @current_user_connections[0].full_name %> - 
+		  		<% if connection.connection_status == 0 %>
+		  			Pending --> <%= link_to "Add Connection", accept_user_connection_user_connection_path(id: connection.id) %>
+	  			<% else %>
+	  				Accepted
+  				<% end %>
+		  	</li>
+		  <% end %>
+		</ul>
+	</div>
+</div>
