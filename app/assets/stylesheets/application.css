@@ -150,3 +150,17 @@ table {
 table-layout: fixed;
 word-wrap: break-word;
 }
+
+.text-muted {
+color: #999;
+}
+
+.oswald {
+margin-top: 0;
+margin-bottom: .75em;
+font-family: 'Oswald';
+}
+
+a .icon {
+border-radius: 50%;
+}
